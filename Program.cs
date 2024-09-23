@@ -33,7 +33,7 @@ namespace OOPS_01
     }*/
 
     //Function Overriding
-    class Class1
+    /*class Class1
     {
         public virtual void show()
         {
@@ -60,6 +60,7 @@ namespace OOPS_01
             Console.ReadLine();
         }
     }
+    */
    
 
     /*class Animal
@@ -100,7 +101,117 @@ namespace OOPS_01
         }
     }
     */
+    
+    //Function Hiding
+   /* class Class1
+    {
+        public void display()
+        {
+            Console.WriteLine("Super class display method");
+        }
+    }
+    class Class2 : Class1
+    {
+        public new void display() 
+        {
+            Console.WriteLine("Sub class display method");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Class1 obj = new Class2();
+            obj.display();
+            Console.ReadKey();
+        }
+    }
+    */
 
+    //Encapsulation
+    /*public class Bank
+    {
+        private double balance;
+        public double getBalance()
+        {
+            return balance;
+        }
+        public void setBalance(double balance)
+        {
+            this.balance = balance;
+        }
+    }
+    class BankUser
+    {
+        public static void Main()
+        {
+            Bank SBI = new Bank();
+            SBI.setBalance(1000);
+            Console.WriteLine(SBI.getBalance());
+            Console.WriteLine("Press any key to exits.");
+            Console.ReadLine();
+        }
+    }*/
+
+    //Inheritance
+    class Branch
+    {
+        int BranchCode;
+        string BranchName,BranchAddress;
+        public void GetBranchData()
+        {
+            Console.WriteLine("Enter Branch Details:");
+            Console.WriteLine("Enter Branch Code:");
+            BranchCode = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Branch Name:");
+            BranchName = Console.ReadLine();
+            Console.WriteLine("Enter Branch Address:");
+            BranchAddress = Console.ReadLine();
+        }
+        public void DisplayBranchData()
+        {
+            Console.WriteLine("Branch Code is : " + BranchCode);
+            Console.WriteLine("Branch Name is : " + BranchName);
+            Console.WriteLine("Branch Address is : " + BranchAddress);
+        }
+    }
+    class Employee : Branch
+    {
+        int EmployeeId, EmployeeAge;
+        string EmployeeName, EmployeeAddress;
+        public void GetEmployeeData()
+        {
+            Console.WriteLine("Enter Employee Details: ");
+            Console.WriteLine("Enter Employee ID: ");
+            EmployeeId = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Employee Age: ");
+            EmployeeAge = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Employee Name: ");
+            EmployeeName = Console.ReadLine();
+            Console.WriteLine("Enter Employee Address: ");
+            EmployeeAddress = Console.ReadLine();
+        }
+        public void DisplayEmployeeData()
+        {
+            Console.WriteLine("Employee Id is : " + EmployeeId);
+            Console.WriteLine("Employee Name is : " + EmployeeName);
+            Console.WriteLine("Employee Address is : " + EmployeeAddress);
+            Console.WriteLine("Employee Age is : " + EmployeeAge);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee obj1 = new Employee();
+            obj1.GetBranchData();
+            obj1.GetEmployeeData();
+            obj1.DisplayBranchData();
+            obj1.DisplayEmployeeData();
+            Console.WriteLine("Press any key to exist.");
+            Console.ReadKey();
+        }
+    }
 }
 
 
